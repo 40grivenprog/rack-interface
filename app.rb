@@ -23,14 +23,6 @@ class App
     path == '/time'
   end
 
-  def status(env)
-    # return 404 if env['REQUEST_PATH'] != '/time'
-    # return 400 if env['QUERY_STRING'].empty?
-    # return 400 unless (env['QUERY_STRING'][/format=(.*)/, 1].split('%2C') - TimeFormatter::AVAILIABLE_PARAMS.keys).empty?
-    # 200
-    # env['REQUEST_PATH'] == '/time' ? 200 : 404
-  end
-
   def headers
     { 'Content-Type' => 'text/plain' }
   end
