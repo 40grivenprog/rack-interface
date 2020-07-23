@@ -1,8 +1,8 @@
 # frozen_string_literal: true
+
 require_relative 'time_format'
 
 class App
-
   def call(env)
     response = Rack::Response.new
     if correct_path?(env['REQUEST_PATH'])
@@ -11,9 +11,9 @@ class App
       response.status = time_formatter.success ? 200 : 400
     else
       response.status = 404
-      response.write("Incorrect path")
+      response.write('Incorrect path')
     end
-    response['Content-Type'] = "text/plain"
+    response['Content-Type'] = 'text/plain'
     response.finish
   end
 
@@ -26,6 +26,4 @@ class App
   def headers
     { 'Content-Type' => 'text/plain' }
   end
-
 end
-
